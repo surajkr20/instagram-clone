@@ -2,6 +2,7 @@
 import express, { urlencoded } from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
+import connectDB from './utils/db.js'
 
 // for environment setup
 import dotenv from 'dotenv'
@@ -34,8 +35,9 @@ app.get("/",(req, res)=>{
     res.send("welcome......")
 })
 
-const PORT = 3000
+const PORT = process.env.PORT || 4000
 
 app.listen(PORT, (req, res)=>{
     console.log(`server listing on port ${PORT}`)
+    connectDB()
 })
