@@ -3,6 +3,10 @@ import express, { urlencoded } from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser';
 
+// for environment setup
+import dotenv from 'dotenv'
+dotenv.config({});
+
 const app = express();
 
 // middlewares (this middllwares/structure follows allmost everywhere)
